@@ -1,0 +1,52 @@
+@charset "UTF-8";
+* {
+  padding: 0; /*所有內容貼齊邊框, 以利後續排版*/
+  margin: 0;
+  box-sizing: border-box; /*左右內容不因添加padding而產生滾動軸*/
+  /*background-color: black;
+  color: white;*/
+  font-family: "Noto Sans TC", sans-serif; /*google font*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; /*標題字體粗細全部還原預設, 以利後續排版*/
+}
+
+header {
+  display: flex; /*使div和nav內容橫向佈局*/
+  align-items: center; /*小標題字體置中, 和logo對齊*/
+  flex-wrap: wrap; /*開放視窗縮小時元素移置下一層陳列*/
+}
+header div.logo {
+  display: flex; /*使div內部元素橫向佈局*/
+  align-items: center; /*大標題字體置中, 和logo對齊*/
+  flex: 5 1 400px;
+  margin: 2rem;
+}
+header div.logo img {
+  width: 6vw;
+  height: 6vw;
+}
+header nav {
+  flex: 2 1 400px;
+}
+header nav ul {
+  display: flex;
+  list-style-type: none; /*去除標題符號*/
+}
+header nav ul li a {
+  color: #09777d;
+  text-decoration: none; /*去除底線*/
+  font-size: 1.35rem;
+  margin-left: 2rem;
+}
+
+@media screen and (max-width: 550px) { /*當視窗縮小於550px以下時調整logo大小*/
+  header div.logo {
+    margin-left: 0.5rem;
+  }
+  header div.logo img {
+    width: 15vw;
+    height: 15vw;
+  }
+}/*# sourceMappingURL=style.css.map */
