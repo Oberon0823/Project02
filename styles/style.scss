@@ -19,7 +19,7 @@ header{
         display: flex; /*使div內部元素橫向佈局*/
         align-items: center; /*大標題字體置中, 和logo對齊*/
         flex: 5 1 400px;
-        margin: 2rem;
+        margin-left: 2rem;
         img{
             width: 6vw;
             height: 6vw;
@@ -30,17 +30,108 @@ header{
         ul{
             display: flex;
             list-style-type: none;  /*去除標題符號*/
+            justify-content: space-around;
             li{
                 a{
                     color: #09777d;
                     text-decoration: none; /*去除底線*/
                     font-size: 1.35rem;
-                    margin-left: 2rem;
                 }
             }
         }
     }
 }
+
+main{
+    section.backImage {
+        min-height: 90vh;
+        width: 100%;
+        background-image: url("../Pictures/pexels-photo-416676.jpg");
+        background-size: cover; /*圖片完整覆蓋指定範圍*/
+        background-position: center; /*圖片於範圍內置中*/
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        h3{
+            font-size: 3.5rem;
+            color: white;
+        }
+
+        div.filter{
+            width: 100%;
+            height: 90vh;
+            background-color: rgba(0, 0, 0, 0.2);
+            position: absolute; /*避免文字因濾鏡而移動到背景最底下*/
+                    top: 0;
+                    z-index: -1;
+        }
+
+        button.start{
+            margin: 2rem 0rem;
+            border: none;   /*去除邊框線*/
+            border-radius: 0.5rem; /*背景四角圓鈍化*/
+            background-color: aqua; /*背景顏色*/
+            padding: 0.75rem 1.5rem; /*文字與邊框距離*/
+            font-size: 1.5rem;  /*字體大小*/
+            color: white;   /*字體顏色*/
+            cursor: pointer; /*增加因none而去除的掌形鼠標*/
+        }
+    }
+
+    section.second{
+        min-height: 100vh; /*設定第二頁最小高度, 以免跑版, 100vh = 100%可視範圍高度*/
+        display: flex;
+        flex-direction: column;
+        align-items: center; /*同時設定h2標籤和底下內容位址*/
+        text-align: center;  /*同時設定底下所有文字置中*/
+        
+        h2{
+            font-size: 2rem;
+            margin: 2rem 0rem;
+        }
+        section.cards{
+            display: flex;
+            width: 80%; /*設定第二頁寬度,  空出左右白邊*/
+            height: 80vh;
+            flex-wrap: wrap;
+            div.card{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around; /*彈性項目對齊主軸"中間"，占完彈性項目後，每個彈性項目左右兩側的空隙平均分配。*/
+                padding: 1rem;
+                flex: 1 1 300px;
+                img{
+                    height: 15vw; /*設定圖片長寬, 15vw = 可視寬度15%*/
+                    width: 15vw;
+                    border-radius: 50%;
+                }
+                h4{
+                    margin: 2.5rem 0rem;
+                    font-size: 2rem;
+                }
+                p{
+                    font-size: 1.25rem;
+                }
+                a{
+                    padding: 1rem 1.5rem;
+                    font-size: 1.25rem;
+                    text-align: center;
+                    color: white;
+                    background-color:#09777d;
+                    text-decoration: none; /*去除底線*/
+                }
+                
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 550px){ /*當視窗縮小於550px以下時調整logo大小*/
     header{
         div.logo{
@@ -48,6 +139,39 @@ header{
             img{
                 width: 15vw;
                 height: 15vw;
+            }
+        }
+    }
+}
+@media screen and (max-width: 700px){ /*當視窗縮小於700px以下時調整logo大小*/
+    main{
+        section.second{
+            section.cards{
+                div.card{
+                    img{
+                        width: 40vw;
+                        height: 40vw;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1150px){ 
+    main{
+        section.second{
+            section.cards{
+                div.card{
+                    img{
+                        margin: 1rem 0rem;
+                    }
+                    h4{
+                        margin: 1rem 0rem;
+                    }
+                    a{
+                        margin: 1rem 0rem;
+                    }
+                }
             }
         }
     }
