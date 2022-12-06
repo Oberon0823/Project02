@@ -130,6 +130,41 @@ main{
             }
         }
     }
+    section.third{
+        min-height: 40vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /*同時設定h2標籤和底下內容位址*/
+        text-align: center;  /*同時設定底下所有文字置中*/
+        background-color: lightgray;
+        div.logo{
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            img{
+                width: 6vw;
+                height: 6vw;
+            }
+            h1{
+                font-size: 2rem;
+            }
+        }
+        div.footers{
+            display: flex;
+            justify-content: center;
+            width: 80%;
+            div.footer{
+                margin: 2rem 1.5rem;
+                justify-content: space-around;
+                background-color: lightgray;
+                h4{
+                    margin: 2rem 1.5rem;
+                    color:white;
+                    font-size: 1.25rem;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 550px){ /*當視窗縮小於550px以下時調整logo大小*/
