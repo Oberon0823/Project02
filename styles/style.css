@@ -79,6 +79,7 @@ main section.backImage button.start {
 main section.second {
   min-height: 100vh; /*設定第二頁最小高度, 以免跑版, 100vh = 100%可視範圍高度*/
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center; /*同時設定h2標籤和底下內容位址*/
   text-align: center; /*同時設定底下所有文字置中*/
@@ -91,7 +92,6 @@ main section.second section.cards {
   display: flex;
   width: 80%; /*設定第二頁寬度,  空出左右白邊*/
   height: 80vh;
-  flex-wrap: wrap;
 }
 main section.second section.cards div.card {
   display: flex;
