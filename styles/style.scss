@@ -98,7 +98,8 @@ main{
         section.cards{
             display: flex;
             width: 80%; /*設定第二頁寬度,  空出左右白邊*/
-            height: 80vh;
+            min-height: 80vh; /*設定最小高度, 使其可依照內容伸縮高度, 以免造成排版走位(第三頁內容重疊)*/
+            flex-wrap: wrap;
             div.card{
                 display: flex;
                 flex-direction: column;
@@ -179,8 +180,26 @@ main{
     }
 }
 @media screen and (max-width: 700px){ /*當視窗縮小於700px以下時調整logo大小*/
+    header{
+       margin: 0.5rem 0.625rem;
+       div.logo{
+        h1{
+            font-size: 1.75rem;
+        }
+       }
+    }
     main{
+        section.backImage{
+                h3{
+                    font-size: 1.75rem;
+                }
+        }
         section.second{
+            height: max-content;
+            h2{
+                font-size: 1.75rem;
+                margin: 0.5rem 0.5rem;
+            }
             section.cards{
                 div.card{
                     img{
@@ -188,6 +207,29 @@ main{
                         height: 40vw;
                     }
                 }
+            }
+        }
+        section.third{
+            div.logo{
+                img{
+                    width: 15vw;
+                    height: 15vw;
+                }
+                h1{
+                    font-size: 1.75rem;
+                }
+            }
+            div.footers{
+                    div.footer{
+                        margin: 2rem 0.25rem; /*當畫面變小時, 減少左右間隔*/
+                        img{
+                            width: 7.5vw;   /*當畫面變小時, 縮小標誌大小*/
+                            height: 7.5vw;
+                        }
+                        h4{
+                            font-size: 0.5rem;
+                        }
+                    }
             }
         }
     }

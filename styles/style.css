@@ -91,7 +91,8 @@ main section.second h2 {
 main section.second section.cards {
   display: flex;
   width: 80%; /*設定第二頁寬度,  空出左右白邊*/
-  height: 80vh;
+  min-height: 80vh; /*設定最小高度, 使其可依照內容伸縮高度, 以免造成排版走位(第三頁內容重疊)*/
+  flex-wrap: wrap;
 }
 main section.second section.cards div.card {
   display: flex;
@@ -167,9 +168,44 @@ main section.third div.footers div.footer h4 {
   }
 }
 @media screen and (max-width: 700px) { /*當視窗縮小於700px以下時調整logo大小*/
+  header {
+    margin: 0.5rem 0.625rem;
+  }
+  header div.logo h1 {
+    font-size: 1.75rem;
+  }
+  main section.backImage h3 {
+    font-size: 1.75rem;
+  }
+  main section.second {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  main section.second h2 {
+    font-size: 1.75rem;
+    margin: 0.5rem 0.5rem;
+  }
   main section.second section.cards div.card img {
     width: 40vw;
     height: 40vw;
+  }
+  main section.third div.logo img {
+    width: 15vw;
+    height: 15vw;
+  }
+  main section.third div.logo h1 {
+    font-size: 1.75rem;
+  }
+  main section.third div.footers div.footer {
+    margin: 2rem 0.25rem; /*當畫面變小時, 減少左右間隔*/
+  }
+  main section.third div.footers div.footer img {
+    width: 7.5vw; /*當畫面變小時, 縮小標誌大小*/
+    height: 7.5vw;
+  }
+  main section.third div.footers div.footer h4 {
+    font-size: 0.5rem;
   }
 }
 @media screen and (max-width: 1150px) {
